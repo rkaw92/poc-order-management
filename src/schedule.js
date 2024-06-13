@@ -78,6 +78,14 @@ export class WeeklySchedule {
     toJSON() {
         return { type: 'WeeklySchedule', start: this.#start.toISODate(), endInclusive: this.#endInclusive.toISODate(), weekdays: Array.from(this.#weekdays) };
     }
+
+    static fromJSON(src) {
+        return new this(
+            DateTime.fromISO(src.start, { zone: 'utc' }),
+            DateTime.fromISO(src.endInclusive, { zone: 'utc' }),
+            src.weekdays
+        );
+    }
 }
 
 export function scheduleFromJSON(src) {
