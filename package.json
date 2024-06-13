@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "test": "node --test test"
+    "test": "node --test test",
+    "start": "node src/index.js"
   },
   "author": "",
   "license": "MIT",
